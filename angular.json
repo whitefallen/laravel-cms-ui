@@ -123,5 +123,10 @@
       }
     }
   },
-  "defaultProject": "cms-ui"
+  "defaultProject": "cms-ui",
+  "cli": {
+    "warnings": {
+      "typescriptMismatch": false
+    }
+  }
 }
