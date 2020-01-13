@@ -4,7 +4,8 @@ import { RequestService} from '../requestService';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers: [RequestService]
 })
 export class LoginComponent implements OnInit {
   email: string;
