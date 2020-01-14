@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { CustomMaterialModule } from './core/material.module';
+import {JwtHelperService} from '@auth0/angular-jwt';
 import {FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './core/app.routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -28,7 +29,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    JwtHelperService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

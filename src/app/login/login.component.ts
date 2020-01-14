@@ -18,8 +18,8 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.requestService.login(this.email, this.password).subscribe(data => {
-      if(data.info == 1){
+    this.requestService.login(this.email, this.password).subscribe((data: any) => {
+      if(data.info === 1){
         localStorage.setItem('token', data.token);
         this.router.navigate(['/dashboard']);
       }else{
