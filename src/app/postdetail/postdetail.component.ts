@@ -20,9 +20,9 @@ export class PostdetailComponent implements OnInit {
   ngOnInit() {
     this.post_id = this.route.snapshot.paramMap.get('id');
     this.requestService.postDetail(this.post_id).subscribe((data: any) => {
-      this.post = data.Post;
-      this.creator = data.Creator;
       this.dataRecieved = true;
+      this.post = data.data;
+      this.creator = data.creator;
     });
   }
 
