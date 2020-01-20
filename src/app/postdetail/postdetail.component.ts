@@ -12,7 +12,7 @@ export class PostdetailComponent implements OnInit {
   public post: any;
   public creator: any;
   public post_id: string;
-  public dataRecieved: boolean;
+  public dataRecieved = false;
 
   constructor(private requestService: RequestService, private route: ActivatedRoute) {
   }
@@ -22,8 +22,8 @@ export class PostdetailComponent implements OnInit {
     this.requestService.postDetail(this.post_id).subscribe((data: any) => {
       this.post = data.Post;
       this.creator = data.Creator;
+      this.dataRecieved = true;
     });
-    this.dataRecieved = true;
   }
 
 }

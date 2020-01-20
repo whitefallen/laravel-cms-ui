@@ -18,6 +18,7 @@ import {SidebarModule} from 'ng-sidebar';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import {MatGridListModule} from "@angular/material/grid-list";
 import { PostdetailComponent } from './postdetail/postdetail.component';
+import { FormatComponent } from './format/format.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PostdetailComponent } from './postdetail/postdetail.component';
     PageNotFoundComponent,
     PostComponent,
     SidebarComponent,
-    PostdetailComponent
+    PostdetailComponent,
+    FormatComponent
   ],
   imports: [
     BrowserModule,

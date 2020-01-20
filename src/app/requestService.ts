@@ -25,4 +25,8 @@ export class RequestService {
   public postDetail(id: string){
     return this.http.get(AppSettings.API_HOST_LOCAL + 'api/posts/' + id, this.httpOptions);
   }
+
+  public allFormat(){
+    return this.http.get(AppSettings.API_HOST_LOCAL + 'api/formats', this.httpOptions);
+  }
 }
