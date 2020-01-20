@@ -1,5 +1,17 @@
-ng-sidebar-container{
+.example-container {
+  width: 500px;
   height: 100vh;
-  width: 20%;
-  background-color: antiquewhite;
+}
+
+.example-sidenav-content {
+  display: flex;
+  flex-flow: row wrap;
+  height: 10%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 20px;
+  width: 100%;
 }
