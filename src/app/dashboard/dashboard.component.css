@@ -3,6 +3,9 @@
   flex-flow: row wrap;
 }
 
-.dashboard-item {
-  flex: 1 50%;
+.left-dashboard {
+  flex: 1 20%;
+}
+.right-dashboard {
+  flex: 1 80%;
 }
