@@ -17,4 +17,8 @@ export class RequestService {
   public login(email: string, password: string){
     return this.http.post(AppSettings.API_HOST_LOCAL + 'api/login',{email: email, password: password}, this.httpOptions);
   }
+
+  public allPost(){
+    return this.http.get(AppSettings.API_HOST_LOCAL + 'api/posts', this.httpOptions);
+  }
 }

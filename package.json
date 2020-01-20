@@ -23,6 +23,7 @@
     "@angular/router": "^8.2.14",
     "@auth0/angular-jwt": "^3.0.1",
     "core-js": "^2.5.4",
+    "ng-sidebar": "^9.2.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

@@ -12,6 +12,10 @@ import { HttpClientModule } from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {MatSidenavModule} from '@angular/material';
+import { PostComponent } from './post/post.component';
+import {SidebarModule} from 'ng-sidebar';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -19,16 +23,20 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     LoginComponent,
     DashboardComponent,
     ToolbarComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    PostComponent,
+    SidebarComponent
   ],
-  imports: [
-    BrowserModule,
-    CustomMaterialModule,
-    FormsModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule
-  ],
+    imports: [
+        BrowserModule,
+        CustomMaterialModule,
+        FormsModule,
+        AppRoutingModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatSidenavModule,
+        SidebarModule.forRoot()
+    ],
   providers: [
     JwtHelperService
   ],
