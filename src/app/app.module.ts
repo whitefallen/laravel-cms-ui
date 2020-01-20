@@ -16,6 +16,7 @@ import {MatSidenavModule} from '@angular/material';
 import { PostComponent } from './post/post.component';
 import {SidebarModule} from 'ng-sidebar';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import {MatGridListModule} from "@angular/material/grid-list";
 
 @NgModule({
   declarations: [
@@ -27,16 +28,17 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     PostComponent,
     SidebarComponent
   ],
-    imports: [
-        BrowserModule,
-        CustomMaterialModule,
-        FormsModule,
-        AppRoutingModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
-        MatSidenavModule,
-        SidebarModule.forRoot()
-    ],
+  imports: [
+    BrowserModule,
+    CustomMaterialModule,
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatSidenavModule,
+    SidebarModule.forRoot(),
+    MatGridListModule
+  ],
   providers: [
     JwtHelperService
   ],
