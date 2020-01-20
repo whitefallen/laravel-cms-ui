@@ -5,10 +5,12 @@ import {DashboardComponent} from '../dashboard/dashboard.component';
 import {PageNotFoundComponent} from '../page-not-found/page-not-found.component';
 import {AuthGuardService as AuthGuard} from '../auth/authGuardService';
 import {PostComponent} from '../post/post.component';
+import {PostdetailComponent} from '../postdetail/postdetail.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'post', component: PostComponent, canActivate: [AuthGuard]},
+  { path: 'postDetail/:id', component: PostdetailComponent, canActivate: [AuthGuard]},
   { path: '',
     redirectTo: '/login',
     pathMatch: 'full'

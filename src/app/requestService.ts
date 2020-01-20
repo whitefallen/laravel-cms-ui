@@ -21,4 +21,8 @@ export class RequestService {
   public allPost(){
     return this.http.get(AppSettings.API_HOST_LOCAL + 'api/posts', this.httpOptions);
   }
+
+  public postDetail(id: string){
+    return this.http.get(AppSettings.API_HOST_LOCAL + 'api/posts/' + id, this.httpOptions);
+  }
 }

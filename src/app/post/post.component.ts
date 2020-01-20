@@ -8,7 +8,7 @@ import {RequestService} from '../requestService';
   providers: [RequestService]
 })
 export class PostComponent implements OnInit {
-  public posts: [];
+  public posts: any;
 
   constructor(private requestService: RequestService) { }
 
