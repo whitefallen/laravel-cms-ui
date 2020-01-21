@@ -1,0 +1,24 @@
+.container {
+  text-align: center;
+  font-family: "Droid Sans", sans-serif;
+  font-size: large;
+  font-weight: bolder;
+  color: lightyellow;
+  vertical-align: center;
+  margin: 20vh auto auto;
+}
+
+.progress {
+  width: 30%;
+  margin: auto;
+}
+
+.page-container {
+  height: 100vh;
+  position: absolute;
+  background-blend-mode: multiply,multiply;
+  width: 100vw;
+  background-color: #0cbaba;
+  background-image: linear-gradient(288deg, #0cbaba 10%, #380036 74%);
+
+}
