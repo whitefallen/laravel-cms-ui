@@ -8,6 +8,7 @@ import {PostComponent} from '../post/post.component';
 import {PostdetailComponent} from '../postdetail/postdetail.component';
 import {FormatComponent} from '../format/format.component';
 import {FormatdetailComponent} from '../formatdetail/formatdetail.component';
+import {EditformatComponent} from '../editformat/editformat.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'postDetail/:id', component: PostdetailComponent, canActivate: [AuthGuard]},
   { path: 'format', component: FormatComponent, canActivate: [AuthGuard]},
   { path: 'formatDetail/:id', component: FormatdetailComponent, canActivate: [AuthGuard]},
+  { path: 'editFormat/:id', component: EditformatComponent, canActivate: [AuthGuard]},
   { path: '',
     redirectTo: '/login',
     pathMatch: 'full'

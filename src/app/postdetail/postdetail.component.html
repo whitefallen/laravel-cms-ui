@@ -8,7 +8,7 @@
   <div class="right-item">
     <mat-card *ngIf="post">
       <mat-card-header>
-        <mat-card-title>{{this.post.title}}</mat-card-title>
+        <mat-card-title>{{this.post.title}} <b>created by {{this.creator.name}}</b></mat-card-title>
       </mat-card-header>
       <mat-card-content>
         <p>
