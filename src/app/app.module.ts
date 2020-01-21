@@ -19,8 +19,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import {MatGridListModule} from "@angular/material/grid-list";
 import { PostdetailComponent } from './postdetail/postdetail.component';
 import { FormatComponent } from './format/format.component';
-import { FormatdetailComponent } from './formatdetail/formatdetail.component';
 import { EditformatComponent } from './editformat/editformat.component';
+import { FormatdetailComponent } from './formatdetail/formatdetail.component';
+import { CmsuiComponent } from './cmsui/cmsui.component';
 
 @NgModule({
   declarations: [
@@ -32,9 +33,10 @@ import { EditformatComponent } from './editformat/editformat.component';
     PostComponent,
     SidebarComponent,
     PostdetailComponent,
+    EditformatComponent,
     FormatComponent,
     FormatdetailComponent,
-    EditformatComponent
+    CmsuiComponent
   ],
   imports: [
     BrowserModule,

@@ -9,19 +9,24 @@ import {PostdetailComponent} from '../postdetail/postdetail.component';
 import {FormatComponent} from '../format/format.component';
 import {FormatdetailComponent} from '../formatdetail/formatdetail.component';
 import {EditformatComponent} from '../editformat/editformat.component';
+import {CmsuiComponent} from '../cmsui/cmsui.component';
+
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-  { path: 'post', component: PostComponent, canActivate: [AuthGuard]},
-  { path: 'postDetail/:id', component: PostdetailComponent, canActivate: [AuthGuard]},
-  { path: 'format', component: FormatComponent, canActivate: [AuthGuard]},
-  { path: 'formatDetail/:id', component: FormatdetailComponent, canActivate: [AuthGuard]},
-  { path: 'editFormat/:id', component: EditformatComponent, canActivate: [AuthGuard]},
+  { path: 'dashboard', component: CmsuiComponent, canActivate: [AuthGuard], children: [
+      { path: '', component: DashboardComponent, canActivate: [AuthGuard]},
+      { path: 'post', component: PostComponent, canActivate: [AuthGuard]},
+      { path: 'post/:id', component: PostdetailComponent, canActivate: [AuthGuard]},
+      { path: 'format', component: FormatComponent, canActivate: [AuthGuard]},
+      { path: 'formatDetail/:id', component: FormatdetailComponent, canActivate: [AuthGuard]},
+      { path: 'editFormat/:id', component: EditformatComponent, canActivate: [AuthGuard]},
+    ] },
   { path: '',
     redirectTo: '/login',
     pathMatch: 'full'
   },
   { path: '**', component: PageNotFoundComponent}
+
 ];
 @NgModule({
   imports: [

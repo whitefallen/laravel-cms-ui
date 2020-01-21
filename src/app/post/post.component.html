@@ -1,23 +1,13 @@
-<div>
-  <app-toolbar></app-toolbar>
-</div>
-<div class="component-page-content">
-  <div class="left-item">
-    <app-sidebar></app-sidebar>
-  </div>
-  <div class="right-item">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>Posts</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <ul>
-          <li *ngFor="let post of posts">
-            <a href="postDetail/{{post.id}}">{{post.title}}</a>
-            <p>{{post.content}}</p>
-          </li>
-        </ul>
-      </mat-card-content>
-    </mat-card>
-  </div>
-</div>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Posts</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <ul>
+      <li *ngFor="let post of posts">
+        <a [routerLink]="['/dashboard/post/', post.id]">{{post.title}}</a>
+        <p>{{post.content}}</p>
+      </li>
+    </ul>
+  </mat-card-content>
+</mat-card>
