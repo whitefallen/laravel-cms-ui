@@ -14,7 +14,7 @@ export class FormatComponent implements OnInit {
 
   ngOnInit() {
     this.requestService.allFormat().subscribe((data: any) => {
-      this.formats = data.Formats;
+      this.formats = data.data;
     });
   }
 
