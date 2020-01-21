@@ -1,23 +1,13 @@
-<div>
-  <app-toolbar></app-toolbar>
-</div>
-<div class="component-page-content">
-  <div class="left-item">
-    <app-sidebar></app-sidebar>
-  </div>
-  <div class="right-item">
-    <mat-card *ngIf="post">
-      <mat-card-header>
-        <mat-card-title>{{this.post.title}} <b>created by {{this.creator.name}}</b></mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <p>
-          {{this.post.content}}
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-raised-button>Edit</button>
-      </mat-card-actions>
-    </mat-card>
-  </div>
-</div>
+<mat-card *ngIf="post">
+  <mat-card-header>
+    <mat-card-title>{{this.post.title}} <b>created by {{this.creator.name}}</b></mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      {{this.post.content}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button>Edit</button>
+  </mat-card-actions>
+</mat-card>
