@@ -1,19 +1,8 @@
-<div>
-  <app-toolbar></app-toolbar>
-</div>
-<div class="component-page-content">
-  <div class="left-item">
-    <app-sidebar></app-sidebar>
-  </div>
-  <div class="right-item">
-    <mat-card *ngIf="format">
-      <mat-card-header>
-        <mat-card-title>Edit {{format.name}}</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
+<mat-card *ngIf="format">
+  <mat-card-header>
+    <mat-card-title>Edit {{format.name}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
 
-      </mat-card-content>
-    </mat-card>
-  </div>
-</div>
-
+  </mat-card-content>
+</mat-card>
