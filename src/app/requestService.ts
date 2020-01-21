@@ -29,4 +29,8 @@ export class RequestService {
   public allFormat(){
     return this.http.get(AppSettings.API_HOST_LOCAL + 'api/formats', this.httpOptions);
   }
+
+  public formatDetail(id: string){
+    return this.http.get(AppSettings.API_HOST_LOCAL + 'api/formats/' + id, this.httpOptions);
+  }
 }

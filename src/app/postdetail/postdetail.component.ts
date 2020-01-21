@@ -12,7 +12,6 @@ export class PostdetailComponent implements OnInit {
   public post: any;
   public creator: any;
   public post_id: string;
-  public dataRecieved = false;
 
   constructor(private requestService: RequestService, private route: ActivatedRoute) {
   }
@@ -20,7 +19,6 @@ export class PostdetailComponent implements OnInit {
   ngOnInit() {
     this.post_id = this.route.snapshot.paramMap.get('id');
     this.requestService.postDetail(this.post_id).subscribe((data: any) => {
-      this.dataRecieved = true;
       this.post = data.data;
       this.creator = data.data.creator;
     });

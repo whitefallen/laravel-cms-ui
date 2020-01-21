@@ -19,6 +19,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import {MatGridListModule} from "@angular/material/grid-list";
 import { PostdetailComponent } from './postdetail/postdetail.component';
 import { FormatComponent } from './format/format.component';
+import { FormatdetailComponent } from './formatdetail/formatdetail.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FormatComponent } from './format/format.component';
     PostComponent,
     SidebarComponent,
     PostdetailComponent,
-    FormatComponent
+    FormatComponent,
+    FormatdetailComponent
   ],
   imports: [
     BrowserModule,
