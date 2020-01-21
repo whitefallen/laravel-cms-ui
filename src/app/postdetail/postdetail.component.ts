@@ -22,7 +22,7 @@ export class PostdetailComponent implements OnInit {
     this.requestService.postDetail(this.post_id).subscribe((data: any) => {
       this.dataRecieved = true;
       this.post = data.data;
-      this.creator = data.creator;
+      this.creator = data.data.creator;
     });
   }
 
