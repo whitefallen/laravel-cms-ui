@@ -17,9 +17,9 @@ const routes: Routes = [
   { path: 'dashboard', component: CmsuiComponent, canActivate: [AuthGuard], children: [
       { path: '', component: DashboardComponent, canActivate: [AuthGuard]},
       { path: 'post', component: PostComponent, canActivate: [AuthGuard]},
-      { path: 'post/:id', component: PostdetailComponent, canActivate: [AuthGuard]},
+      { path: 'post/:id/detail', component: PostdetailComponent, canActivate: [AuthGuard]},
       { path: 'format', component: FormatComponent, canActivate: [AuthGuard]},
-      { path: 'format/:id', component: FormatdetailComponent, canActivate: [AuthGuard]},
+      { path: 'format/:id/detail', component: FormatdetailComponent, canActivate: [AuthGuard]},
       { path: 'format/:id/edit', component: EditformatComponent, canActivate: [AuthGuard]},
       { path: 'format/add', component: AddformatComponent, canActivate: [AuthGuard]}
     ] },

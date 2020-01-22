@@ -5,7 +5,7 @@
   <mat-card-content>
     <ul>
       <li *ngFor="let format of formats">
-        <a [routerLink]="['/dashboard/format', this.format.id]">{{format.name}}</a>
+        <a [routerLink]="['/dashboard/format', this.format.id, 'detail']">{{format.name}}</a>
         <p>{{format.description}}</p>
       </li>
     </ul>
