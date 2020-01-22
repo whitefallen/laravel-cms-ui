@@ -39,4 +39,10 @@ export class RequestService {
       name: name, description: description, created_by: created_by, changed_by: changed_by
     }, this.httpOptions);
   }
+
+  public addFormat(name: string, description: string, created_by: string, changed_by: string){
+    return this.http.post(AppSettings.API_HOST_LOCAL + '/api/formats', {
+      name: name, description: description, created_by: created_by, changed_by: changed_by
+    }, this.httpOptions);
+  }
 }

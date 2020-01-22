@@ -10,6 +10,7 @@ import {FormatComponent} from '../format/format.component';
 import {FormatdetailComponent} from '../formatdetail/formatdetail.component';
 import {EditformatComponent} from '../editformat/editformat.component';
 import {CmsuiComponent} from '../cmsui/cmsui.component';
+import {AddformatComponent} from '../addformat/addformat.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
       { path: 'format', component: FormatComponent, canActivate: [AuthGuard]},
       { path: 'format/:id', component: FormatdetailComponent, canActivate: [AuthGuard]},
       { path: 'format/:id/edit', component: EditformatComponent, canActivate: [AuthGuard]},
+      { path: 'format/add', component: AddformatComponent, canActivate: [AuthGuard]}
     ] },
   { path: '',
     redirectTo: '/login',

@@ -23,6 +23,7 @@ import { EditformatComponent } from './editformat/editformat.component';
 import { FormatdetailComponent } from './formatdetail/formatdetail.component';
 import { CmsuiComponent } from './cmsui/cmsui.component';
 import {MatProgressBarModule} from "@angular/material/progress-bar";
+import { AddformatComponent } from './addformat/addformat.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {MatProgressBarModule} from "@angular/material/progress-bar";
     EditformatComponent,
     FormatComponent,
     FormatdetailComponent,
-    CmsuiComponent
+    CmsuiComponent,
+    AddformatComponent
   ],
   imports: [
     BrowserModule,
