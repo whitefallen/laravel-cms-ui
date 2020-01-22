@@ -11,15 +11,17 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class FormatdetailComponent implements OnInit {
   public format: any;
   public creator: any;
+  public editor: any;
   public format_id: string;
 
-  constructor(private requestService: RequestService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private requestService: RequestService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.format_id = this.route.snapshot.paramMap.get('id');
     this.requestService.formatDetail(this.format_id).subscribe((data: any) => {
       this.format = data.data;
       this.creator = data.data.creator;
+      this.editor = data.data.editor;
     });
   }
 }

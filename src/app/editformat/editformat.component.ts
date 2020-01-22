@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {RequestService} from '../requestService';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-editformat',
@@ -13,7 +14,7 @@ export class EditformatComponent implements OnInit {
   public creator: any;
   public format_id: string;
 
-  constructor(private requestService: RequestService, private route: ActivatedRoute) { }
+  constructor(private requestService: RequestService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.format_id = this.route.snapshot.paramMap.get('id');
@@ -23,4 +24,16 @@ export class EditformatComponent implements OnInit {
     });
   }
 
+  edit(editForm: NgForm) {
+    this.requestService.editFormat(
+      this.format_id, editForm.value.formatName, editForm.value.formatDescription, this.format.created_by, sessionStorage.getItem('userid')
+    ).subscribe((data: any) => {
+      if(data.info === 1){
+        this.router.navigate(['/dashboard/format/', this.format_id]);
+      }else{
+        alert('something went wrong');
+      }
+    });
+
+  }
 }

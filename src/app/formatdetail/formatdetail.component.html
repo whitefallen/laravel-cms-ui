@@ -1,6 +1,6 @@
 <mat-card *ngIf="format">
   <mat-card-header>
-    <mat-card-title>{{this.format.name}} <b>created by {{this.creator.name}}</b></mat-card-title>
+    <mat-card-title>{{this.format.name}} <b>created by {{this.creator.name}} and got edited by {{this.editor.name}} at {{this.format.updated_at}}</b></mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <p>
