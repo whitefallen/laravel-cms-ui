@@ -45,4 +45,8 @@ export class RequestService {
       name: name, description: description, created_by: created_by, changed_by: changed_by
     }, this.httpOptions);
   }
+
+  public deleteFormat(id: string){
+    return this.http.delete(AppSettings.API_HOST_LOCAL + '/api/formats/' + id, this.httpOptions);
+  }
 }
