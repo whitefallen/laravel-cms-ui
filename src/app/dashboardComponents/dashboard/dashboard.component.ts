@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {RequestService} from '../requestService';
+import {RequestService} from '../../requestService';
 
 @Component({
   selector: 'app-dashboard',

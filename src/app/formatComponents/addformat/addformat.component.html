@@ -10,7 +10,7 @@
       <mat-form-field class="form-field">
         <textarea matInput placeholder="Description" name="formatDescription" [(ngModel)]=this.description required></textarea>
       </mat-form-field>
-      <button mat-raised-button type="submit" [disabled]="!addForm.form.valid">Add</button>
+      <button mat-raised-button class="add-button" type="submit" [disabled]="!addForm.form.valid">Add</button>
       <button mat-raised-button class="cancel-button" [routerLink]="['/dashboard/format']">Cancel</button>
     </form>
   </mat-card-content>

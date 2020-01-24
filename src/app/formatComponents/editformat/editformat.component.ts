@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {RequestService} from '../requestService';
+import {RequestService} from '../../requestService';
 import {ActivatedRoute, Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
 
@@ -29,7 +29,7 @@ export class EditformatComponent implements OnInit {
       this.format_id, editForm.value.formatName, editForm.value.formatDescription, this.format.created_by, sessionStorage.getItem('userid')
     ).subscribe((data: any) => {
       if(data.info === 1){
-        this.router.navigate(['/dashboard/format/', this.format_id]);
+        this.router.navigate(['/dashboard/format/', this.format_id, 'detail']);
       }else{
         alert('something went wrong');
       }

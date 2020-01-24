@@ -1,16 +1,16 @@
 import {NgModule} from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {LoginComponent} from '../login/login.component';
-import {DashboardComponent} from '../dashboard/dashboard.component';
-import {PageNotFoundComponent} from '../page-not-found/page-not-found.component';
+import {LoginComponent} from '../genericComponents/login/login.component';
+import {DashboardComponent} from '../dashboardComponents/dashboard/dashboard.component';
+import {PageNotFoundComponent} from '../genericComponents/page-not-found/page-not-found.component';
 import {AuthGuardService as AuthGuard} from '../auth/authGuardService';
-import {PostComponent} from '../post/post.component';
-import {PostdetailComponent} from '../postdetail/postdetail.component';
-import {FormatComponent} from '../format/format.component';
-import {FormatdetailComponent} from '../formatdetail/formatdetail.component';
-import {EditformatComponent} from '../editformat/editformat.component';
-import {CmsuiComponent} from '../cmsui/cmsui.component';
-import {AddformatComponent} from '../addformat/addformat.component';
+import {PostComponent} from '../postComponents/post/post.component';
+import {PostdetailComponent} from '../postComponents/postdetail/postdetail.component';
+import {FormatComponent} from '../formatComponents/format/format.component';
+import {FormatdetailComponent} from '../formatComponents/formatdetail/formatdetail.component';
+import {EditformatComponent} from '../formatComponents/editformat/editformat.component';
+import {CmsuiComponent} from '../genericComponents/cmsui/cmsui.component';
+import {AddformatComponent} from '../formatComponents/addformat/addformat.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
