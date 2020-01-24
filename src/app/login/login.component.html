@@ -7,6 +7,7 @@
   </mat-card-header>
   <form class="example-form">
     <mat-card-content>
+      <form #loginform="ngForm" (ngSubmit)="login()">
         <table class="example-full-width" cellspacing="0">
           <tr>
             <td>
@@ -20,9 +21,11 @@
               <input matInput placeholder="Password" [(ngModel)]="password" type="password" name="password" required>
             </mat-form-field></td>
           </tr></table>
+      <button mat-raised-button type="submit" [disabled]="!loginform.form.valid">Login</button>
+      </form>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button (click)="login()">Login</button>
+
     </mat-card-actions>
   </form>
 </mat-card>
