@@ -8,7 +8,7 @@
         <a [routerLink]="['/dashboard/topic', this.topic.id, 'detail']">{{topic.name}}</a>
         <p>{{topic.description}}</p>
         <div class="topic-image">
-          <img src="http://127.0.0.1:8000/{{this.topic.image}}">
+          <img src="{{backendroute}}{{this.topic.image}}">
         </div>
       </li>
     </ul>
