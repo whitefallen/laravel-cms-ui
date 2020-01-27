@@ -5,10 +5,14 @@
   <mat-card-content>
     <ul>
       <li *ngFor="let topic of topics">
-        <a [routerLink]="['/dashboard/topic', this.topic.id, 'detail']">{{topic.name}}</a>
-        <p>{{topic.description}}</p>
-        <div class="topic-image">
-          <img src="{{backendroute}}{{this.topic.image}}">
+        <div class="component-page-content">
+          <div class="left-item">
+            <a [routerLink]="['/dashboard/topic', this.topic.id, 'detail']">{{topic.name}}</a>
+            <p>{{topic.description}}</p>
+          </div>
+          <div class="right-item topic-image">
+            <img src="{{backendroute}}{{this.topic.image}}">
+          </div>
         </div>
       </li>
     </ul>
