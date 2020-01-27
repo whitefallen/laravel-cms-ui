@@ -49,4 +49,28 @@ export class RequestService {
   public deleteFormat(id: string){
     return this.http.delete(AppSettings.API_HOST_LOCAL + '/api/formats/' + id, this.httpOptions);
   }
+
+  public allTopic(){
+    return this.http.get(AppSettings.API_HOST_LOCAL + '/api/topics', this.httpOptions);
+  }
+
+  public topicDetail(id: string){
+    return this.http.get(AppSettings.API_HOST_LOCAL + 'api/topics/' + id, this.httpOptions);
+  }
+
+  public editTopic(id: string, name: string, description: string, image: string, created_by: string, changed_by: string){
+    return this.http.post(AppSettings.API_HOST_LOCAL + '/api/topics/' + id, {
+      name: name, description: description, image: image, created_by: created_by, changed_by: changed_by
+    }, this.httpOptions);
+  }
+
+  public addTopic(name: string, description: string, image: string, created_by: string, changed_by: string){
+    return this.http.post(AppSettings.API_HOST_LOCAL + '/api/topics', {
+      name: name, description: description, image: image, created_by: created_by, changed_by: changed_by
+    }, this.httpOptions);
+  }
+
+  public deleteTopic(id: string){
+    return this.http.delete(AppSettings.API_HOST_LOCAL + '/api/topics/' + id, this.httpOptions);
+  }
 }

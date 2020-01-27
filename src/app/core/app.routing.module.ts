@@ -11,6 +11,10 @@ import {FormatdetailComponent} from '../formatComponents/formatdetail/formatdeta
 import {EditformatComponent} from '../formatComponents/editformat/editformat.component';
 import {CmsuiComponent} from '../genericComponents/cmsui/cmsui.component';
 import {AddformatComponent} from '../formatComponents/addformat/addformat.component';
+import {TopicComponent} from '../topicComponents/topic/topic.component';
+import {TopicdetailComponent} from '../topicComponents/topicdetail/topicdetail.component';
+import {EdittopicComponent} from '../topicComponents/edittopic/edittopic.component';
+import {AddtopicComponent} from '../topicComponents/addtopic/addtopic.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -21,7 +25,11 @@ const routes: Routes = [
       { path: 'format', component: FormatComponent, canActivate: [AuthGuard]},
       { path: 'format/:id/detail', component: FormatdetailComponent, canActivate: [AuthGuard]},
       { path: 'format/:id/edit', component: EditformatComponent, canActivate: [AuthGuard]},
-      { path: 'format/add', component: AddformatComponent, canActivate: [AuthGuard]}
+      { path: 'format/add', component: AddformatComponent, canActivate: [AuthGuard]},
+      { path: 'topic', component: TopicComponent, canActivate: [AuthGuard]},
+      { path: 'topic/:id/detail', component: TopicdetailComponent, canActivate: [AuthGuard]},
+      { path: 'topic/:id/edit', component: EdittopicComponent, canActivate: [AuthGuard]},
+      { path: 'topic/add', component: AddtopicComponent, canActivate: [AuthGuard]},
     ] },
   { path: '',
     redirectTo: '/login',

@@ -1,0 +1,16 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Topic</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <ul>
+      <li *ngFor="let topic of topics">
+        <a [routerLink]="['/dashboard/topic', this.topic.id, 'detail']">{{topic.name}}</a>
+        <p>{{topic.description}}</p>
+      </li>
+    </ul>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button [routerLink]="['/dashboard/topic/add']">Add</button>
+  </mat-card-actions>
+</mat-card>

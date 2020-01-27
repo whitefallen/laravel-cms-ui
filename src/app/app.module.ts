@@ -24,6 +24,10 @@ import { FormatdetailComponent } from './formatComponents/formatdetail/formatdet
 import { CmsuiComponent } from './genericComponents/cmsui/cmsui.component';
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import { AddformatComponent } from './formatComponents/addformat/addformat.component';
+import { TopicComponent } from './topicComponents/topic/topic.component';
+import { AddtopicComponent } from './topicComponents/addtopic/addtopic.component';
+import { EdittopicComponent } from './topicComponents/edittopic/edittopic.component';
+import { TopicdetailComponent } from './topicComponents/topicdetail/topicdetail.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +43,11 @@ import { AddformatComponent } from './formatComponents/addformat/addformat.compo
     FormatComponent,
     FormatdetailComponent,
     CmsuiComponent,
-    AddformatComponent
+    AddformatComponent,
+    TopicComponent,
+    AddtopicComponent,
+    EdittopicComponent,
+    TopicdetailComponent
   ],
   imports: [
     BrowserModule,
