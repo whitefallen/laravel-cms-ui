@@ -1,1 +1,19 @@
-<p>topicdetail works!</p>
+<mat-card *ngIf="topic">
+  <mat-card-header>
+    <mat-card-title>{{this.topic.name}} <b>created by {{this.creator.name}} and got edited by {{this.editor.name}} at {{this.topic.updated_at}}</b></mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="left-item">
+    <p>
+      {{this.topic.description}}
+    </p>
+    </div>
+    <div class="right-item topic-image">
+      <img src="{{backendroute}}{{this.topic.image}}">
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button [routerLink]="['/dashboard/topic', this.topic.id, 'edit']">Edit</button>
+    <button class="delete-button" mat-raised-button (click)="delete(this.topic.id, this.topic.name)">Delete</button>
+  </mat-card-actions>
+</mat-card>

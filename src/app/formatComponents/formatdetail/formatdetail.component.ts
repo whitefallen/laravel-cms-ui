@@ -26,7 +26,7 @@ export class FormatdetailComponent implements OnInit {
   }
 
   delete(id: string, name: string) {
-    if(confirm('Are you sure to delete the format: "' + name + '"')) {
+    if(confirm('Are you sure to delete the format: "' + name + '"?')) {
       this.requestService.deleteFormat(id).subscribe((data: any) => {
         if(data.info === 1) {
           this.router.navigate(['/dashboard/format']);
