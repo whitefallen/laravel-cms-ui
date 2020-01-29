@@ -14,6 +14,7 @@ export class AddtopicComponent implements OnInit {
   description: string;
   files: File;
   imageBase64: string | ArrayBuffer;
+  imgIsSet = false;
 
   constructor(private requestService: RequestService, private router: Router) {}
 
@@ -22,10 +23,24 @@ export class AddtopicComponent implements OnInit {
 
   add(addForm: NgForm) {
     const _self = this;
-    const reader = new FileReader();
-    reader.readAsDataURL(this.files);
-    reader.onload = function () {
-      _self.imageBase64 = reader.result;
+    if(this.imgIsSet){
+      const reader = new FileReader();
+      reader.readAsDataURL(this.files);
+      reader.onload = function () {
+        _self.imageBase64 = reader.result;
+        _self.requestService.addTopic(
+          addForm.value.topicName, addForm.value.topicDescription, _self.imageBase64, sessionStorage.getItem('userid'),
+          sessionStorage.getItem('userid')
+        ).subscribe((data: any) => {
+          console.log(data.debug);
+          if(data.info === 1) {
+            _self.router.navigate(['/dashboard/topic']);
+          } else {
+            alert('something went wrong');
+          }
+        });
+      };
+    }else{
       _self.requestService.addTopic(
         addForm.value.topicName, addForm.value.topicDescription, _self.imageBase64, sessionStorage.getItem('userid'),
         sessionStorage.getItem('userid')
@@ -37,16 +52,11 @@ export class AddtopicComponent implements OnInit {
           alert('something went wrong');
         }
       });
-    };
-    reader.onerror = function (error) {
-      console.log('Error: ', error);
-    };
-    console.log(_self.imageBase64);
-
-
+    }
   }
 
   onFileChanged(event: any) {
     this.files = event.target.files[0];
+    this.imgIsSet = true;
   }
 }

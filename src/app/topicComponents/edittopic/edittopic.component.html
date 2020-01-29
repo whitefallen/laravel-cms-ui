@@ -1,1 +1,23 @@
-<p>edittopic works!</p>
+<mat-card *ngIf="topic">
+  <mat-card-header>
+    <mat-card-title>Edit {{topic.name}}</mat-card-title>
+    <img src="{{backendroute}}{{this.topic.image}}">
+  </mat-card-header>
+  <form #editForm="ngForm">
+    <mat-card-content>
+      <mat-form-field class="form-field">
+        <input matInput placeholder="Name" name="topicName" [(ngModel)]=topic.name>
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <textarea matInput placeholder="Description" name="topicDescription" [(ngModel)]=topic.description></textarea>
+      </mat-form-field>
+      <input type="file" (change)="onFileChanged($event)">
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button class="save-button" (click)="edit(editForm)">Save</button>
+    </mat-card-actions>
+    <mat-card-actions>
+      <button mat-raised-button [routerLink]="['/dashboard/topic', this.topic.id, 'detail']">Cancel</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

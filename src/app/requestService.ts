@@ -58,9 +58,9 @@ export class RequestService {
     return this.http.get(AppSettings.API_HOST_LOCAL + 'api/topics/' + id, this.httpOptions);
   }
 
-  public editTopic(id: string, name: string, description: string, image: any, created_by: string, changed_by: string){
+  public editTopic(id: string, name: string, description: string, image: any, imgIsSet: boolean, created_by: string, changed_by: string){
     return this.http.post(AppSettings.API_HOST_LOCAL + '/api/topics/' + id, {
-      name: name, description: description, image: image, created_by: created_by, changed_by: changed_by
+      name: name, description: description, image: image, imgIsSet: imgIsSet, created_by: created_by, changed_by: changed_by
     }, this.httpOptions);
   }
 
