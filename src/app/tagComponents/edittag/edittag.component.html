@@ -1,0 +1,21 @@
+<mat-card *ngIf="tag">
+  <mat-card-header>
+    <mat-card-title>Edit {{tag.name}}</mat-card-title>
+  </mat-card-header>
+  <form #editForm="ngForm">
+    <mat-card-content>
+      <mat-form-field class="form-field">
+        <input matInput placeholder="Name" name="tagName" [(ngModel)]=tag.name>
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <textarea matInput placeholder="Description" name="tagDescription" [(ngModel)]=tag.description></textarea>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button class="save-button" (click)="edit(editForm)">Save</button>
+    </mat-card-actions>
+    <mat-card-actions>
+      <button mat-raised-button [routerLink]="['/dashboard/tag', this.tag.id, 'detail']">Cancel</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

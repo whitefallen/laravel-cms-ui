@@ -28,6 +28,10 @@ import { TopicComponent } from './topicComponents/topic/topic.component';
 import { AddtopicComponent } from './topicComponents/addtopic/addtopic.component';
 import { EdittopicComponent } from './topicComponents/edittopic/edittopic.component';
 import { TopicdetailComponent } from './topicComponents/topicdetail/topicdetail.component';
+import { AddtagComponent } from './tagComponents/addtag/addtag.component';
+import { EdittagComponent } from './tagComponents/edittag/edittag.component';
+import { TagComponent } from './tagComponents/tag/tag.component';
+import { TagdetailComponent } from './tagComponents/tagdetail/tagdetail.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +51,11 @@ import { TopicdetailComponent } from './topicComponents/topicdetail/topicdetail.
     TopicComponent,
     AddtopicComponent,
     EdittopicComponent,
-    TopicdetailComponent
+    TopicdetailComponent,
+    AddtagComponent,
+    EdittagComponent,
+    TagComponent,
+    TagdetailComponent
   ],
   imports: [
     BrowserModule,

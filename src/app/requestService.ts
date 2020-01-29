@@ -73,4 +73,28 @@ export class RequestService {
   public deleteTopic(id: string){
     return this.http.delete(AppSettings.API_HOST_LOCAL + '/api/topics/' + id, this.httpOptions);
   }
+
+  public allTag(){
+    return this.http.get(AppSettings.API_HOST_LOCAL + 'api/tags', this.httpOptions);
+  }
+
+  public tagDetail(id: string){
+    return this.http.get(AppSettings.API_HOST_LOCAL + 'api/tags/' + id, this.httpOptions);
+  }
+
+  public editTag(id: string, name: string, description: string, created_by: string, changed_by: string){
+    return this.http.post(AppSettings.API_HOST_LOCAL + '/api/tags/' + id, {
+      name: name, description: description, created_by: created_by, changed_by: changed_by
+    }, this.httpOptions);
+  }
+
+  public addTag(name: string, description: string, created_by: string, changed_by: string){
+    return this.http.post(AppSettings.API_HOST_LOCAL + '/api/tags', {
+      name: name, description: description, created_by: created_by, changed_by: changed_by
+    }, this.httpOptions);
+  }
+
+  public deleteTag(id: string){
+    return this.http.delete(AppSettings.API_HOST_LOCAL + '/api/tags/' + id, this.httpOptions);
+  }
 }

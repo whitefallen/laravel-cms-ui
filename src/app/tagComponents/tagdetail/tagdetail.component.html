@@ -1,0 +1,14 @@
+<mat-card *ngIf="tag">
+  <mat-card-header>
+    <mat-card-title>{{this.tag.name}} <b>created by {{this.creator.name}} and got edited by {{this.editor.name}} at {{this.tag.updated_at}}</b></mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      {{this.tag.description}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button [routerLink]="['/dashboard/tag', this.tag.id, 'edit']">Edit</button>
+    <button class="delete-button" mat-raised-button (click)="delete(this.tag.id, this.tag.name)">Delete</button>
+  </mat-card-actions>
+</mat-card>

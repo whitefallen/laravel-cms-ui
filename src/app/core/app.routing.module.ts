@@ -15,6 +15,10 @@ import {TopicComponent} from '../topicComponents/topic/topic.component';
 import {TopicdetailComponent} from '../topicComponents/topicdetail/topicdetail.component';
 import {EdittopicComponent} from '../topicComponents/edittopic/edittopic.component';
 import {AddtopicComponent} from '../topicComponents/addtopic/addtopic.component';
+import {TagComponent} from '../tagComponents/tag/tag.component';
+import {TagdetailComponent} from '../tagComponents/tagdetail/tagdetail.component';
+import {EdittagComponent} from '../tagComponents/edittag/edittag.component';
+import {AddtagComponent} from '../tagComponents/addtag/addtag.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -30,6 +34,10 @@ const routes: Routes = [
       { path: 'topic/:id/detail', component: TopicdetailComponent, canActivate: [AuthGuard]},
       { path: 'topic/:id/edit', component: EdittopicComponent, canActivate: [AuthGuard]},
       { path: 'topic/add', component: AddtopicComponent, canActivate: [AuthGuard]},
+      { path: 'tag', component: TagComponent, canActivate: [AuthGuard]},
+      { path: 'tag/:id/detail', component: TagdetailComponent, canActivate: [AuthGuard]},
+      { path: 'tag/:id/edit', component: EdittagComponent, canActivate: [AuthGuard]},
+      { path: 'tag/add', component: AddtagComponent, canActivate: [AuthGuard]},
     ] },
   { path: '',
     redirectTo: '/login',

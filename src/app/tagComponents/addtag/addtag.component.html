@@ -1,0 +1,18 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Add Tag</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form #addForm="ngForm" (ngSubmit)="add(addForm)">
+      <mat-form-field class="form-field">
+        <input matInput placeholder="Name" name="tagName" [(ngModel)]=this.name required>
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <textarea matInput placeholder="Description" name="tagDescription" [(ngModel)]=this.description required></textarea>
+      </mat-form-field>
+      <button mat-raised-button class="add-button" type="submit" [disabled]="!addForm.form.valid">Add</button>
+      <button mat-raised-button class="cancel-button" [routerLink]="['/dashboard/tag']">Cancel</button>
+    </form>
+  </mat-card-content>
+</mat-card>
+

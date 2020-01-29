@@ -1,0 +1,16 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Tag</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <ul>
+      <li *ngFor="let tag of tags">
+        <a [routerLink]="['/dashboard/tag', this.tag.id, 'detail']">{{tag.name}}</a>
+        <p>{{tag.description}}</p>
+      </li>
+    </ul>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button [routerLink]="['/dashboard/tag/add']">Add</button>
+  </mat-card-actions>
+</mat-card>
