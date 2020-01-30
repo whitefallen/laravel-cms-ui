@@ -1,6 +1,6 @@
 <mat-card *ngIf="post">
   <mat-card-header>
-    <mat-card-title>{{this.post.title}} <b>created by {{this.creator.name}}</b></mat-card-title>
+    <mat-card-title>{{this.post.title}} <b>created by {{this.creator.name}} and got edited by {{this.editor.name}} at {{this.post.updated_at}}</b></mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <p>
@@ -8,6 +8,7 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button>Edit</button>
+    <button mat-raised-button [routerLink]="['/dashboard/post', this.post.id, 'edit']">Edit</button>
+    <button class="delete-button" mat-raised-button (click)="delete(this.post.id, this.post.title)">Delete</button>
   </mat-card-actions>
 </mat-card>

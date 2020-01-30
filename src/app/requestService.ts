@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {AppSettings} from '../AppSettings';
+import DateTimeFormat = Intl.DateTimeFormat;
+import {Timestamp} from 'rxjs';
 
 @Injectable()
 export class RequestService {
@@ -24,6 +26,26 @@ export class RequestService {
 
   public postDetail(id: string){
     return this.http.get(AppSettings.API_HOST_LOCAL + 'api/posts/' + id, this.httpOptions);
+  }
+
+  public editPost(id: string, title: string, published: boolean, publish_date: Date, introduction: string, content: string, image: any,
+                  tags: [], topic: [], format_id: string, created_by: string, changed_by: string){
+    return this.http.post(AppSettings.API_HOST_LOCAL + '/api/posts/' + id, {
+      title: title, published: published, introduction: introduction, content: content, image: image, tags: tags, topic: topic,
+      format_id: format_id, created_by: created_by, changed_by: changed_by
+    }, this.httpOptions);
+  }
+
+  public addPost(title: string, published: boolean, publish_date: Date, introduction: string, content: string, image: any,
+                  tags: [], topic: [], format_id: string, created_by: string, changed_by: string){
+    return this.http.post(AppSettings.API_HOST_LOCAL + '/api/posts', {
+      title: title, published: published, introduction: introduction, content: content, image: image, tags: tags, topic: topic,
+      format_id: format_id, created_by: created_by, changed_by: changed_by
+    }, this.httpOptions);
+  }
+
+  public deletePost(id: string){
+    return this.http.delete(AppSettings.API_HOST_LOCAL + '/api/posts/' + id, this.httpOptions);
   }
 
   public allFormat(){

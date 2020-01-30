@@ -19,6 +19,8 @@ import {TagComponent} from '../tagComponents/tag/tag.component';
 import {TagdetailComponent} from '../tagComponents/tagdetail/tagdetail.component';
 import {EdittagComponent} from '../tagComponents/edittag/edittag.component';
 import {AddtagComponent} from '../tagComponents/addtag/addtag.component';
+import {EditpostComponent} from '../postComponents/editpost/editpost.component';
+import {AddpostComponent} from '../postComponents/addpost/addpost.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -26,6 +28,8 @@ const routes: Routes = [
       { path: '', component: DashboardComponent, canActivate: [AuthGuard]},
       { path: 'post', component: PostComponent, canActivate: [AuthGuard]},
       { path: 'post/:id/detail', component: PostdetailComponent, canActivate: [AuthGuard]},
+      { path: 'post/:id/edit', component: EditpostComponent, canActivate: [AuthGuard]},
+      { path: 'post/add', component: AddpostComponent, canActivate: [AuthGuard]},
       { path: 'format', component: FormatComponent, canActivate: [AuthGuard]},
       { path: 'format/:id/detail', component: FormatdetailComponent, canActivate: [AuthGuard]},
       { path: 'format/:id/edit', component: EditformatComponent, canActivate: [AuthGuard]},
