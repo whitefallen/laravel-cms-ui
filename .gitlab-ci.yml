@@ -10,7 +10,6 @@ pages:
     - npm install -g @angular/cli
     - npm install
     - ng build --configuration=production
-    - mv dist/cms-ui/* public/
   artifacts:
     paths:
       - public
