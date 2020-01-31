@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {RequestService} from '../../requestService';
 import {ActivatedRoute, Router} from '@angular/router';
+import {BaseComponent} from '../../baseComponents/base/base.component';
 
 @Component({
   selector: 'app-postdetail',
@@ -8,13 +9,14 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./postdetail.component.css'],
   providers: [RequestService]
 })
-export class PostdetailComponent implements OnInit {
+export class PostdetailComponent extends BaseComponent implements OnInit {
   public post: any;
   public creator: any;
   public editor: any;
   public post_id: string;
 
   constructor(private requestService: RequestService, private route: ActivatedRoute, private router: Router) {
+    super();
   }
 
   ngOnInit() {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {RequestService} from '../../requestService';
 import {ActivatedRoute, Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
+import {BaseComponent} from '../../baseComponents/base/base.component';
 
 @Component({
   selector: 'app-edittag',
@@ -9,12 +10,14 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./edittag.component.css'],
   providers: [RequestService]
 })
-export class EdittagComponent implements OnInit {
+export class EdittagComponent extends BaseComponent implements OnInit {
   public tag: any;
   public creator: any;
   public tag_id: string;
 
-  constructor(private requestService: RequestService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private requestService: RequestService, private route: ActivatedRoute, private router: Router) {
+    super();
+  }
 
   ngOnInit() {
     this.tag_id = this.route.snapshot.paramMap.get('id');

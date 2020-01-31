@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RequestService} from '../../requestService';
+import {BaseComponent} from '../../baseComponents/base/base.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,10 +8,12 @@ import {RequestService} from '../../requestService';
   styleUrls: ['./dashboard.component.css'],
   providers: [RequestService]
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent extends BaseComponent implements OnInit {
   public posts: [];
 
-  constructor(private requestService: RequestService) { }
+  constructor(private requestService: RequestService) {
+    super();
+  }
 
   ngOnInit() {
   }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {RequestService} from '../../requestService';
 import {ActivatedRoute, Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
-import {AppSettings} from '../../../AppSettings';
+import {BaseComponent} from '../../baseComponents/base/base.component';
 
 @Component({
   selector: 'app-edittopic',
@@ -10,16 +10,17 @@ import {AppSettings} from '../../../AppSettings';
   styleUrls: ['./edittopic.component.css'],
   providers: [RequestService]
 })
-export class EdittopicComponent implements OnInit {
+export class EdittopicComponent extends BaseComponent implements OnInit {
   files: File;
   imageBase64: string | ArrayBuffer;
   public topic: any;
   public creator: any;
   public topic_id: string;
   imgIsSet = false;
-  public backendroute = AppSettings.API_HOST_LOCAL;
 
-  constructor(private requestService: RequestService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private requestService: RequestService, private route: ActivatedRoute, private router: Router) {
+    super();
+  }
 
   ngOnInit() {
     this.topic_id = this.route.snapshot.paramMap.get('id');

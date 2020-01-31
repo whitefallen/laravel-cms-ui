@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RequestService} from '../../requestService';
+import {BaseComponent} from '../../baseComponents/base/base.component';
 
 @Component({
   selector: 'app-format',
@@ -7,10 +8,12 @@ import {RequestService} from '../../requestService';
   styleUrls: ['./format.component.css'],
   providers: [RequestService]
 })
-export class FormatComponent implements OnInit {
+export class FormatComponent extends BaseComponent implements OnInit {
   public formats: any;
 
-  constructor(private requestService: RequestService) { }
+  constructor(private requestService: RequestService) {
+    super();
+  }
 
   ngOnInit() {
     this.requestService.allFormat().subscribe((data: any) => {

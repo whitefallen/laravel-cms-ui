@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {RequestService} from '../../requestService';
 import {Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
+import {BaseComponent} from '../../baseComponents/base/base.component';
 
 @Component({
   selector: 'app-addtopic',
@@ -9,14 +10,16 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./addtopic.component.css'],
   providers: [RequestService]
 })
-export class AddtopicComponent implements OnInit {
+export class AddtopicComponent extends BaseComponent implements OnInit {
   name: string;
   description: string;
   files: File;
   imageBase64: string | ArrayBuffer;
   imgIsSet = false;
 
-  constructor(private requestService: RequestService, private router: Router) {}
+  constructor(private requestService: RequestService, private router: Router) {
+    super();
+  }
 
   ngOnInit() {
   }

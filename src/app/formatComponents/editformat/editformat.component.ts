@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {RequestService} from '../../requestService';
 import {ActivatedRoute, Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
+import {BaseComponent} from '../../baseComponents/base/base.component';
 
 @Component({
   selector: 'app-editformat',
@@ -9,12 +10,14 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./editformat.component.css'],
   providers: [RequestService]
 })
-export class EditformatComponent implements OnInit {
+export class EditformatComponent extends BaseComponent implements OnInit {
   public format: any;
   public creator: any;
   public format_id: string;
 
-  constructor(private requestService: RequestService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private requestService: RequestService, private route: ActivatedRoute, private router: Router) {
+    super();
+  }
 
   ngOnInit() {
     this.format_id = this.route.snapshot.paramMap.get('id');

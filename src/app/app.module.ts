@@ -34,6 +34,7 @@ import { TagComponent } from './tagComponents/tag/tag.component';
 import { TagdetailComponent } from './tagComponents/tagdetail/tagdetail.component';
 import { AddpostComponent } from './postComponents/addpost/addpost.component';
 import { EditpostComponent } from './postComponents/editpost/editpost.component';
+import { BaseComponent } from './baseComponents/base/base.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { EditpostComponent } from './postComponents/editpost/editpost.component'
     TagComponent,
     TagdetailComponent,
     AddpostComponent,
-    EditpostComponent
+    EditpostComponent,
+    BaseComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RequestService} from '../../requestService';
-import {AppSettings} from '../../../AppSettings';
+import {BaseComponent} from '../../baseComponents/base/base.component';
 
 @Component({
   selector: 'app-topic',
@@ -8,11 +8,12 @@ import {AppSettings} from '../../../AppSettings';
   styleUrls: ['./topic.component.css'],
   providers: [RequestService]
 })
-export class TopicComponent implements OnInit {
+export class TopicComponent extends BaseComponent implements OnInit {
   public topics: any;
-  public backendroute = AppSettings.API_HOST_LOCAL;
 
-  constructor(private requestService: RequestService) { }
+  constructor(private requestService: RequestService) {
+    super();
+  }
 
   ngOnInit() {
     this.requestService.allTopic().subscribe((data: any) => {

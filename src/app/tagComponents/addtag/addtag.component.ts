@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {RequestService} from '../../requestService';
 import {Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
+import {BaseComponent} from '../../baseComponents/base/base.component';
 
 @Component({
   selector: 'app-addtag',
@@ -9,11 +10,13 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./addtag.component.css'],
   providers: [RequestService]
 })
-export class AddtagComponent implements OnInit {
+export class AddtagComponent extends BaseComponent implements OnInit {
   name: string;
   description: string;
 
-  constructor(private requestService: RequestService, private router: Router) { }
+  constructor(private requestService: RequestService, private router: Router) {
+    super();
+  }
 
   ngOnInit() {
   }

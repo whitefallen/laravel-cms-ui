@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RequestService} from '../../requestService';
 import {Router} from '@angular/router';
+import {BaseComponent} from '../../baseComponents/base/base.component';
 
 @Component({
   selector: 'app-login',
@@ -8,11 +9,13 @@ import {Router} from '@angular/router';
   styleUrls: ['./login.component.css'],
   providers: [RequestService]
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent extends BaseComponent implements OnInit {
   email: string;
   password: string;
 
-  constructor(private requestService: RequestService, private router: Router) { }
+  constructor(private requestService: RequestService, private router: Router) {
+    super();
+  }
 
   ngOnInit() {
   }

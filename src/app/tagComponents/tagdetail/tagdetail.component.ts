@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {RequestService} from '../../requestService';
 import {ActivatedRoute, Router} from '@angular/router';
+import {BaseComponent} from '../../baseComponents/base/base.component';
 
 @Component({
   selector: 'app-tagdetail',
@@ -8,13 +9,15 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./tagdetail.component.css'],
   providers: [RequestService]
 })
-export class TagdetailComponent implements OnInit {
+export class TagdetailComponent extends BaseComponent implements OnInit {
   public tag: any;
   public creator: any;
   public editor: any;
   public tag_id: string;
 
-  constructor(private requestService: RequestService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private requestService: RequestService, private route: ActivatedRoute, private router: Router) {
+    super();
+  }
 
   ngOnInit() {
     this.tag_id = this.route.snapshot.paramMap.get('id');

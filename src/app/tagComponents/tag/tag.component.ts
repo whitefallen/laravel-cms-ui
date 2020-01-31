@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RequestService} from '../../requestService';
+import {BaseComponent} from '../../baseComponents/base/base.component';
 
 @Component({
   selector: 'app-tag',
@@ -7,10 +8,12 @@ import {RequestService} from '../../requestService';
   styleUrls: ['./tag.component.css'],
   providers: [RequestService]
 })
-export class TagComponent implements OnInit {
+export class TagComponent extends BaseComponent implements OnInit {
   public tags: any;
 
-  constructor(private requestService: RequestService) { }
+  constructor(private requestService: RequestService) {
+    super();
+  }
 
   ngOnInit() {
     this.requestService.allTag().subscribe((data: any) => {

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {RequestService} from '../../requestService';
 import {ActivatedRoute, Router} from '@angular/router';
-import {AppSettings} from '../../../AppSettings';
+import {BaseComponent} from '../../baseComponents/base/base.component';
 
 @Component({
   selector: 'app-topicdetail',
@@ -9,14 +9,15 @@ import {AppSettings} from '../../../AppSettings';
   styleUrls: ['./topicdetail.component.css'],
   providers: [RequestService]
 })
-export class TopicdetailComponent implements OnInit {
+export class TopicdetailComponent extends BaseComponent implements OnInit {
   public topic: any;
   public creator: any;
   public editor: any;
   public topic_id: string;
-  public backendroute: string;
 
-  constructor(private requestService: RequestService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private requestService: RequestService, private route: ActivatedRoute, private router: Router) {
+    super();
+  }
 
   ngOnInit() {
     this.topic_id = this.route.snapshot.paramMap.get('id');
@@ -24,7 +25,6 @@ export class TopicdetailComponent implements OnInit {
       this.topic = data.data;
       this.creator = data.data.creator;
       this.editor = data.data.editor;
-      this.backendroute = AppSettings.API_HOST_LOCAL;
     });
   }
 
