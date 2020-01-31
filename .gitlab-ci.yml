@@ -9,7 +9,7 @@ pages:
   script:
     - npm install -g @angular/cli
     - npm install
-    - ng build --configuration=production
+    - ng build --configuration=production --base-href https://der-eine-aegyptische-gott.gitlab.io/cms-ui/
   artifacts:
     paths:
       - public
