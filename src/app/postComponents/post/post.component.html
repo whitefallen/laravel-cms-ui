@@ -5,8 +5,15 @@
   <mat-card-content>
     <ul>
       <li *ngFor="let post of posts">
-        <a [routerLink]="['/dashboard/post/', post.id, 'detail']">{{post.title}}</a>
-        <p>{{post.content}}</p>
+        <div class="component-page-content">
+          <div class="left-item">
+            <a [routerLink]="['/dashboard/post/', post.id, 'detail']">{{post.title}}</a>
+            <p>{{post.content}}</p>
+          </div>
+          <div class="right-item post-image">
+            <img src="{{backendroute}}{{this.post.image}}">
+          </div>
+        </div>
       </li>
     </ul>
   </mat-card-content>

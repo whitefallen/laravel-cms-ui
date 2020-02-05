@@ -35,7 +35,6 @@ export class AddtopicComponent extends BaseComponent implements OnInit {
           addForm.value.topicName, addForm.value.topicDescription, _self.imageBase64, sessionStorage.getItem('userid'),
           sessionStorage.getItem('userid')
         ).subscribe((data: any) => {
-          console.log(data.debug);
           if(data.info === 1) {
             _self.router.navigate(['/dashboard/topic']);
           } else {
@@ -48,7 +47,6 @@ export class AddtopicComponent extends BaseComponent implements OnInit {
         addForm.value.topicName, addForm.value.topicDescription, _self.imageBase64, sessionStorage.getItem('userid'),
         sessionStorage.getItem('userid')
       ).subscribe((data: any) => {
-        console.log(data.debug);
         if(data.info === 1) {
           _self.router.navigate(['/dashboard/topic']);
         } else {

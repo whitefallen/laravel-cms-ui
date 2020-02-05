@@ -5,14 +5,14 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './genericComponents/login/login.component';
 import { CustomMaterialModule } from './core/material.module';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './core/app.routing.module';
 import { DashboardComponent } from './dashboardComponents/dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToolbarComponent } from './genericComponents/toolbar/toolbar.component';
 import { PageNotFoundComponent } from './genericComponents/page-not-found/page-not-found.component';
-import { MatSidenavModule } from '@angular/material';
+import {MatCheckboxModule, MatSelectModule, MatSidenavModule} from '@angular/material';
 import { PostComponent } from './postComponents/post/post.component';
 import { SidebarModule } from 'ng-sidebar';
 import { SidebarComponent } from './genericComponents/sidebar/sidebar.component';
@@ -22,7 +22,7 @@ import { FormatComponent } from './formatComponents/format/format.component';
 import { EditformatComponent } from './formatComponents/editformat/editformat.component';
 import { FormatdetailComponent } from './formatComponents/formatdetail/formatdetail.component';
 import { CmsuiComponent } from './genericComponents/cmsui/cmsui.component';
-import {MatProgressBarModule} from "@angular/material/progress-bar";
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { AddformatComponent } from './formatComponents/addformat/addformat.component';
 import { TopicComponent } from './topicComponents/topic/topic.component';
 import { AddtopicComponent } from './topicComponents/addtopic/addtopic.component';
@@ -73,7 +73,11 @@ import { BaseComponent } from './baseComponents/base/base.component';
     MatSidenavModule,
     SidebarModule.forRoot(),
     MatGridListModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    MatCheckboxModule,
+    MatCheckboxModule
   ],
   providers: [
     JwtHelperService

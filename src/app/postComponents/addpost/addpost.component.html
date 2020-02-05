@@ -1,1 +1,42 @@
-<p>addpost works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Add Post</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form #addForm="ngForm" (ngSubmit)="add(addForm)">
+      <mat-form-field class="form-field">
+        <input matInput placeholder="Title" name="title" [(ngModel)]=this.title required>
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <textarea matInput placeholder="Introduction" name="introduction" [(ngModel)]=this.introduction required></textarea>
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <textarea matInput placeholder="Content" name="content" [(ngModel)]=this.content required></textarea>
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <mat-label>Format</mat-label>
+        <mat-select required [(ngModel)]="selectedFormat" name="format">
+          <mat-option *ngFor="let format of formats" [value]="format.id">
+            {{format.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <mat-label>Tags</mat-label>
+        <mat-select multiple required [(ngModel)]="selectedTag" name="tag">
+          <mat-option *ngFor="let tag of tags" [value]="tag.id">{{tag.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <mat-label>Topics</mat-label>
+        <mat-select multiple required [(ngModel)]="selectedTopic" name="topic">
+          <mat-option *ngFor="let topic of topic" [value]="topic.id">{{topic.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-checkbox (change)="onCheckboxChange()">Publish?</mat-checkbox>
+      <input type="file" (change)="onFileChanged($event)">
+      <button mat-raised-button class="add-button" type="submit" [disabled]="!addForm.form.valid">Add</button>
+      <button mat-raised-button class="cancel-button" [routerLink]="['/dashboard/post']">Cancel</button>
+    </form>
+  </mat-card-content>
+</mat-card>

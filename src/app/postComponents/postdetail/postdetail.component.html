@@ -3,9 +3,14 @@
     <mat-card-title>{{this.post.title}} <b>created by {{this.creator.name}} and got edited by {{this.editor.name}} at {{this.post.updated_at}}</b></mat-card-title>
   </mat-card-header>
   <mat-card-content>
+    <div class="left-item">
     <p>
       {{this.post.content}}
     </p>
+    </div>
+    <div class="right-item post-image">
+      <img src="{{backendroute}}{{this.post.image}}">
+    </div>
   </mat-card-content>
   <mat-card-actions>
     <button mat-raised-button [routerLink]="['/dashboard/post', this.post.id, 'edit']">Edit</button>
