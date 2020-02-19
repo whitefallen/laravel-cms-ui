@@ -21,6 +21,7 @@ import {EdittagComponent} from '../tagComponents/edittag/edittag.component';
 import {AddtagComponent} from '../tagComponents/addtag/addtag.component';
 import {EditpostComponent} from '../postComponents/editpost/editpost.component';
 import {AddpostComponent} from '../postComponents/addpost/addpost.component';
+import {AddwebhookComponent} from "../webhookComponents/addwebhook/addwebhook.component";
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -42,6 +43,7 @@ const routes: Routes = [
       { path: 'tag/:id/detail', component: TagdetailComponent, canActivate: [AuthGuard]},
       { path: 'tag/:id/edit', component: EdittagComponent, canActivate: [AuthGuard]},
       { path: 'tag/add', component: AddtagComponent, canActivate: [AuthGuard]},
+      { path: 'webhook/add', component: AddwebhookComponent, canActivate: [AuthGuard]}
     ] },
   { path: '',
     redirectTo: '/login',

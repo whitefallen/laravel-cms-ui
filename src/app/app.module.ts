@@ -35,6 +35,7 @@ import { TagdetailComponent } from './tagComponents/tagdetail/tagdetail.componen
 import { AddpostComponent } from './postComponents/addpost/addpost.component';
 import { EditpostComponent } from './postComponents/editpost/editpost.component';
 import { BaseComponent } from './baseComponents/base/base.component';
+import { AddwebhookComponent } from './webhookComponents/addwebhook/addwebhook.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { BaseComponent } from './baseComponents/base/base.component';
     TagdetailComponent,
     AddpostComponent,
     EditpostComponent,
-    BaseComponent
+    BaseComponent,
+    AddwebhookComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,26 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Add Webhook</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form #addForm="ngForm" (ngSubmit)="add(addForm)">
+      <mat-form-field class="form-field">
+        <label>
+          <input matInput placeholder="Url" name="webhookUrl" [(ngModel)]=this.url required>
+        </label>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="form-field" *ngIf="eventOptions">
+        <mat-label>Type</mat-label>
+        <mat-select multiple required [(ngModel)]="selectedOption" name="eventOptions">
+          <mat-option *ngFor="let eventOption of eventOptions" [value]="eventOption">
+            {{eventOption}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <button mat-raised-button class="add-button" type="submit" [disabled]="!addForm.form.valid">Add</button>
+      <button mat-raised-button class="cancel-button" [routerLink]="['/dashboard/webhook']">Cancel</button>
+    </form>
+  </mat-card-content>
+</mat-card>

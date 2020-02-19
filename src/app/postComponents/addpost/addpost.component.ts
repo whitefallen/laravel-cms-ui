@@ -48,7 +48,7 @@ export class AddpostComponent extends BaseComponent implements OnInit {
 
   add(addForm: NgForm) {
     const _self = this;
-    if(this.imgIsSet){
+    if (this.imgIsSet) {
       const reader = new FileReader();
       reader.readAsDataURL(this.files);
       reader.onload = function () {
@@ -58,20 +58,20 @@ export class AddpostComponent extends BaseComponent implements OnInit {
           addForm.value.content, _self.imageBase64, addForm.value.tags, addForm.value.topic, addForm.value.format,
           sessionStorage.getItem('userid'), sessionStorage.getItem('userid')
         ).subscribe((data: any) => {
-          if(data.info === 1) {
+          if (data.info === 1) {
             _self.router.navigate(['/dashboard/post']);
           } else {
             alert('something went wrong');
           }
         });
       };
-    }else{
+    } else {
       _self.requestService.addPost(
         addForm.value.title, _self.published, _self.publish_date, addForm.value.introduction,
         addForm.value.content, _self.imageBase64, addForm.value.tags, addForm.value.topic, addForm.value.format,
         sessionStorage.getItem('userid'), sessionStorage.getItem('userid')
       ).subscribe((data: any) => {
-        if(data.info === 1) {
+        if (data.info === 1) {
           _self.router.navigate(['/dashboard/post']);
         } else {
           alert('something went wrong');
@@ -86,11 +86,11 @@ export class AddpostComponent extends BaseComponent implements OnInit {
     this.imgIsSet = true;
   }
 
-  onCheckboxChange(){
+  onCheckboxChange() {
     if (this.published === false){
       this.published = true;
       this.publish_date = new Date().getTime();
-    }else{
+    } else {
       this.published = false;
       this.publish_date = null;
     }
