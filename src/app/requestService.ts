@@ -26,10 +26,11 @@ export class RequestService {
     return this.http.get(environment.apiUrl + 'api/posts/' + id, this.httpOptions);
   }
 
-  public editPost(id: string, title: string, published: boolean, publish_date: any, introduction: string, content: string, image: any,
+  public editPost(id: string, title: string, published: boolean, publish_date: any, introduction: string, content: string, image: any, imgIsSet: any,
                   tags: [], topic: [], format_id: string, created_by: string, changed_by: string) {
     return this.http.post(environment.apiUrl + '/api/posts/' + id, {
-      title: title, published: published, introduction: introduction, content: content, image: image, tags: tags, topic: topic,
+      // tslint:disable-next-line:max-line-length
+      title: title, published: published, publish_date: publish_date, introduction: introduction, content: content, image: image, imgIsSet: imgIsSet, tags: tags, topic: topic,
       format_id: format_id, created_by: created_by, changed_by: changed_by
     }, this.httpOptions);
   }
@@ -37,7 +38,8 @@ export class RequestService {
   public addPost(title: string, published: boolean, publish_date: any, introduction: string, content: string, image: any,
                   tags: [], topic: [], format_id: string, created_by: string, changed_by: string) {
     return this.http.post(environment.apiUrl + '/api/posts', {
-      title: title, published: published, introduction: introduction, content: content, image: image, tags: tags, topic: topic,
+      // tslint:disable-next-line:max-line-length
+      title: title, published: published, publish_date: publish_date, introduction: introduction, content: content, image: image, tags: tags, topic: topic,
       format_id: format_id, created_by: created_by, changed_by: changed_by
     }, this.httpOptions);
   }

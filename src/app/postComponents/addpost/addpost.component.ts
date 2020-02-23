@@ -17,7 +17,7 @@ export class AddpostComponent extends BaseComponent implements OnInit {
   formats: any;
   format_id: string;
   published = false;
-  publish_date: number = null;
+  publish_date: number;
   introduction: string;
   content: string;
   files: File;
@@ -89,7 +89,7 @@ export class AddpostComponent extends BaseComponent implements OnInit {
   onCheckboxChange() {
     if (this.published === false){
       this.published = true;
-      this.publish_date = new Date().getTime();
+      this.publish_date = Math.floor(Date.now() / 1000);
     } else {
       this.published = false;
       this.publish_date = null;
