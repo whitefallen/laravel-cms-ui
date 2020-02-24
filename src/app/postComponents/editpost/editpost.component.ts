@@ -23,14 +23,14 @@ export class EditpostComponent extends BaseComponent implements OnInit {
   imageBase64: string | ArrayBuffer;
   imgIsSet = false;
 
-  topic: any;
+  topics: any;
   tags: any;
   formats: any;
   format_id: string;
 
   selectedFormat: any;
-  selectedTopic: any;
-  selectedTag: any;
+  selectedTopics: any;
+  selectedTags: any;
 
   constructor(private requestService: RequestService, private route: ActivatedRoute,  private router: Router) {
     super();
@@ -39,17 +39,36 @@ export class EditpostComponent extends BaseComponent implements OnInit {
   ngOnInit() {
     this.post_id = this.route.snapshot.paramMap.get('id');
 
+    const dataSelectedTags = [];
+    const dataSelectedTopics = [];
+
     this.requestService.postDetail(this.post_id).subscribe((data: any) => {
+
       this.post = data.data;
       this.creator = data.data.creator;
+
+      Object.keys(data.data.topics).map(function(objectKey, index) {
+        dataSelectedTopics[index] = data.data.topics[objectKey].id;
+        this['selectedTopics'] = dataSelectedTopics;
+      }.bind(this));
+
+      Object.keys(data.data.tags).map(function(objectKey, index) {
+        dataSelectedTags[index] = data.data.tags[objectKey].id;
+        this['selectedTags'] = dataSelectedTags;
+      }.bind(this));
+
+      this.selectedFormat = data.data.format.id;
+
     });
+
+
 
     this.requestService.allTag().subscribe((data: any) => {
       this.tags = data.data;
     });
 
     this.requestService.allTopic().subscribe((data: any) => {
-      this.topic = data.data;
+      this.topics = data.data;
     });
 
     this.requestService.allFormat().subscribe((data: any) => {
@@ -59,7 +78,6 @@ export class EditpostComponent extends BaseComponent implements OnInit {
 
   add(addForm: NgForm) {
     const _self = this;
-    console.log( new Date('0000-00-00'));
     if (this.imgIsSet) {
       const reader = new FileReader();
       reader.readAsDataURL(this.files);
@@ -67,7 +85,7 @@ export class EditpostComponent extends BaseComponent implements OnInit {
         _self.imageBase64 = reader.result;
         _self.requestService.editPost(
           _self.post_id, addForm.value.title, _self.published, _self.publish_date, addForm.value.introduction,
-          addForm.value.content, _self.imageBase64, _self.imgIsSet, addForm.value.tags, addForm.value.topic, addForm.value.format,
+          addForm.value.content, _self.imageBase64, _self.imgIsSet, addForm.value.tags, addForm.value.topics, addForm.value.format,
           _self.creator.id, sessionStorage.getItem('userid')
         ).subscribe((data: any) => {
           if (data.info === 1) {
@@ -80,7 +98,7 @@ export class EditpostComponent extends BaseComponent implements OnInit {
     } else {
       _self.requestService.editPost(
         _self.post_id, addForm.value.title, _self.published, _self.publish_date, addForm.value.introduction,
-        addForm.value.content, _self.imageBase64, _self.imgIsSet, addForm.value.tags, addForm.value.topic, addForm.value.format,
+        addForm.value.content, _self.imageBase64, _self.imgIsSet, addForm.value.tags, addForm.value.topics, addForm.value.format,
         _self.creator.id, sessionStorage.getItem('userid')
       ).subscribe((data: any) => {
         if (data.info === 1) {

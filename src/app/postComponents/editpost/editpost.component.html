@@ -23,14 +23,14 @@
       </mat-form-field>
       <mat-form-field class="form-field">
         <mat-label>Tags</mat-label>
-        <mat-select multiple required [(ngModel)]="selectedTag" name="tag">
+        <mat-select multiple required [(ngModel)]="selectedTags" name="tags">
           <mat-option *ngFor="let tag of tags" [value]="tag.id">{{tag.name}}</mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field class="form-field">
         <mat-label>Topics</mat-label>
-        <mat-select multiple required [(ngModel)]="selectedTopic" name="topic">
-          <mat-option *ngFor="let topic of topic" [value]="topic.id">{{topic.name}}</mat-option>
+        <mat-select multiple required [(ngModel)]="selectedTopics" name="topics">
+          <mat-option *ngFor="let topic of topics" [value]="topic.id">{{topic.name}}</mat-option>
         </mat-select>
       </mat-form-field>
       <mat-checkbox (change)="onCheckboxChange()">Publish?</mat-checkbox>

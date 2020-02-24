@@ -27,19 +27,19 @@ export class RequestService {
   }
 
   public editPost(id: string, title: string, published: boolean, publish_date: any, introduction: string, content: string, image: any, imgIsSet: any,
-                  tags: [], topic: [], format_id: string, created_by: string, changed_by: string) {
+                  tags: [], topics: [], format_id: string, created_by: string, changed_by: string) {
     return this.http.post(environment.apiUrl + '/api/posts/' + id, {
       // tslint:disable-next-line:max-line-length
-      title: title, published: published, publish_date: publish_date, introduction: introduction, content: content, image: image, imgIsSet: imgIsSet, tags: tags, topic: topic,
+      title: title, published: published, publish_date: publish_date, introduction: introduction, content: content, image: image, imgIsSet: imgIsSet, tags: tags, topics: topics,
       format_id: format_id, created_by: created_by, changed_by: changed_by
     }, this.httpOptions);
   }
 
   public addPost(title: string, published: boolean, publish_date: any, introduction: string, content: string, image: any,
-                  tags: [], topic: [], format_id: string, created_by: string, changed_by: string) {
+                  tags: [], topics: [], format_id: string, created_by: string, changed_by: string) {
     return this.http.post(environment.apiUrl + '/api/posts', {
       // tslint:disable-next-line:max-line-length
-      title: title, published: published, publish_date: publish_date, introduction: introduction, content: content, image: image, tags: tags, topic: topic,
+      title: title, published: published, publish_date: publish_date, introduction: introduction, content: content, image: image, tags: tags, topics: topics,
       format_id: format_id, created_by: created_by, changed_by: changed_by
     }, this.httpOptions);
   }
