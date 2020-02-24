@@ -15,3 +15,16 @@ html, body {
 .right-item {
   flex: 1 80%;
 }
+
+div form .form-field {
+  display:block
+}
+
+div form cancel-button {
+  display:block;
+  margin-top: 5vh;
+}
+
+div form .save-button {
+  background-color:green;
+}
