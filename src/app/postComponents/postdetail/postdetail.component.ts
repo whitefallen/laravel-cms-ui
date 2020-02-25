@@ -14,6 +14,9 @@ export class PostdetailComponent extends BaseComponent implements OnInit {
   public creator: any;
   public editor: any;
   public post_id: string;
+  public format: any;
+  public topics: any;
+  public tags: any;
 
   constructor(private requestService: RequestService, private route: ActivatedRoute, private router: Router) {
     super();
@@ -25,6 +28,9 @@ export class PostdetailComponent extends BaseComponent implements OnInit {
       this.post = data.data;
       this.creator = data.data.creator;
       this.editor = data.data.editor;
+      this.format = data.data.format;
+      this.topics = data.data.topics;
+      this.tags = data.data.tags;
     });
   }
 

@@ -5,11 +5,35 @@
   <mat-card-content>
     <div class="left-item">
     <p>
-      {{this.post.content}}
+      Content: {{this.post.content}}
     </p>
     </div>
     <div class="right-item post-image">
       <img src="{{backendroute}}{{this.post.image}}">
+    </div>
+    <div class="left-item">
+      <p>
+        Introduction: {{this.post.introduction}}
+      </p>
+    </div>
+    <div class="left-item">
+      <p>Format: {{this.format.name}}</p>
+    </div>
+    <div class="left-item">
+      <span>Topics: </span>
+      <ul>
+        <li *ngFor="let topic of this.topics" [value]="topic">
+          {{topic.name}}
+        </li>
+      </ul>
+    </div>
+    <div class="left-item">
+      <span>Tags: </span>
+      <ul>
+        <li *ngFor="let tag of this.tags" [value]="tag">
+          {{tag.name}}
+        </li>
+      </ul>
     </div>
   </mat-card-content>
   <mat-card-actions>

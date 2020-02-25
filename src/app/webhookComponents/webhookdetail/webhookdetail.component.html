@@ -5,8 +5,16 @@
   <mat-card-content>
     <div class="left-item">
       <p>
-        {{this.webhook.url}}
+        <i>URL:</i> {{this.webhook.url}}
       </p>
+    </div>
+    <div class="left-item">
+      <span><i>Hooks:</i></span>
+      <ul>
+        <li *ngFor="let eventOption of this.webhook.event" [value]="eventOption">
+          {{eventOption}}
+        </li>
+      </ul>
     </div>
   </mat-card-content>
   <mat-card-actions>
