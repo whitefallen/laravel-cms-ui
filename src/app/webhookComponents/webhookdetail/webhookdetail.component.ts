@@ -10,8 +10,8 @@ import {BaseComponent} from '../../baseComponents/base/base.component';
   providers: [RequestService]
 })
 export class WebhookdetailComponent extends BaseComponent implements OnInit {
-  private webhook_id: string;
-  private webhook: any;
+  public webhook_id: string;
+  public webhook: any;
 
   constructor(private requestService: RequestService, private route: ActivatedRoute, private router: Router) {
     super();

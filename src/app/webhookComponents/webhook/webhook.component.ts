@@ -9,7 +9,7 @@ import {BaseComponent} from '../../baseComponents/base/base.component';
   providers: [RequestService]
 })
 export class WebhookComponent extends BaseComponent implements OnInit {
-  private webhooks: any;
+  public webhooks: any;
 
   constructor(private requestService: RequestService) {
     super();
