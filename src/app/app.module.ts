@@ -36,6 +36,9 @@ import { AddpostComponent } from './postComponents/addpost/addpost.component';
 import { EditpostComponent } from './postComponents/editpost/editpost.component';
 import { BaseComponent } from './baseComponents/base/base.component';
 import { AddwebhookComponent } from './webhookComponents/addwebhook/addwebhook.component';
+import { WebhookComponent } from './webhookComponents/webhook/webhook.component';
+import { WebhookdetailComponent } from './webhookComponents/webhookdetail/webhookdetail.component';
+import { EditwebhookComponent } from './webhookComponents/editwebhook/editwebhook.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +66,10 @@ import { AddwebhookComponent } from './webhookComponents/addwebhook/addwebhook.c
     AddpostComponent,
     EditpostComponent,
     BaseComponent,
-    AddwebhookComponent
+    AddwebhookComponent,
+    WebhookComponent,
+    WebhookdetailComponent,
+    EditwebhookComponent
   ],
   imports: [
     BrowserModule,

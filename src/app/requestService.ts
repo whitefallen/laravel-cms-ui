@@ -121,12 +121,30 @@ export class RequestService {
   }
 
   public allEventOptions() {
-    return this.http.get(environment.apiUrl + '/api/webhook/options', this.httpOptions);
+    return this.http.get(environment.apiUrl + '/api/webhooks/event/options', this.httpOptions);
   }
 
   public addWebhook(url: string, events: string, created_by: string, changed_by: string) {
-    return this.http.post( environment.apiUrl + '/api/webhook', {
+    return this.http.post( environment.apiUrl + '/api/webhooks', {
       url: url, event: events, created_by: created_by, changed_by: changed_by
+    }, this.httpOptions);
+  }
+
+  public allWebhooks() {
+    return this.http.get(environment.apiUrl + 'api/webhooks', this.httpOptions);
+  }
+
+  public webhookDetail(id: string) {
+    return this.http.get(environment.apiUrl + 'api/webhooks/' + id, this.httpOptions);
+  }
+
+  public deleteWebhook(id: string) {
+    return this.http.delete(environment.apiUrl + '/api/webhooks/' + id, this.httpOptions);
+  }
+
+  public editWebhook(id: string, url: string, events: string, created_by: string, changed_by: string) {
+    return this.http.post( environment.apiUrl + '/api/webhooks/' + id, {
+      id: id, url: url, event: events, created_by: created_by, changed_by: changed_by
     }, this.httpOptions);
   }
 }

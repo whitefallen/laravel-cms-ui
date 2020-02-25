@@ -21,17 +21,18 @@ export class AddwebhookComponent extends BaseComponent implements OnInit {
 
   ngOnInit() {
     this.requestService.allEventOptions().subscribe((data: any) => {
-      this.eventOptions = data.data;
+      this.eventOptions = Object.keys(data.data).map(function(key) {
+        return data.data[key];
+      });
     });
   }
 
   add(addForm: NgForm) {
-    console.log(addForm);
     this.requestService.addWebhook(
       addForm.value.webhookUrl, addForm.value.eventOptions, sessionStorage.getItem('userid'), sessionStorage.getItem('userid')
     ).subscribe((data: any) => {
       if (data.info === 1) {
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/dashboard/webhook']);
       } else {
         console.log(data.info);
         alert('something went wrong');

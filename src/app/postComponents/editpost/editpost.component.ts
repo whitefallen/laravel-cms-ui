@@ -76,7 +76,7 @@ export class EditpostComponent extends BaseComponent implements OnInit {
     });
   }
 
-  add(addForm: NgForm) {
+  edit(editForm: NgForm) {
     const _self = this;
     if (this.imgIsSet) {
       const reader = new FileReader();
@@ -84,8 +84,8 @@ export class EditpostComponent extends BaseComponent implements OnInit {
       reader.onload = function () {
         _self.imageBase64 = reader.result;
         _self.requestService.editPost(
-          _self.post_id, addForm.value.title, _self.published, _self.publish_date, addForm.value.introduction,
-          addForm.value.content, _self.imageBase64, _self.imgIsSet, addForm.value.tags, addForm.value.topics, addForm.value.format,
+          _self.post_id, editForm.value.title, _self.published, _self.publish_date, editForm.value.introduction,
+          editForm.value.content, _self.imageBase64, _self.imgIsSet, editForm.value.tags, editForm.value.topics, editForm.value.format,
           _self.creator.id, sessionStorage.getItem('userid')
         ).subscribe((data: any) => {
           if (data.info === 1) {
@@ -97,8 +97,8 @@ export class EditpostComponent extends BaseComponent implements OnInit {
       };
     } else {
       _self.requestService.editPost(
-        _self.post_id, addForm.value.title, _self.published, _self.publish_date, addForm.value.introduction,
-        addForm.value.content, _self.imageBase64, _self.imgIsSet, addForm.value.tags, addForm.value.topics, addForm.value.format,
+        _self.post_id, editForm.value.title, _self.published, _self.publish_date, editForm.value.introduction,
+        editForm.value.content, _self.imageBase64, _self.imgIsSet, editForm.value.tags, editForm.value.topics, editForm.value.format,
         _self.creator.id, sessionStorage.getItem('userid')
       ).subscribe((data: any) => {
         if (data.info === 1) {

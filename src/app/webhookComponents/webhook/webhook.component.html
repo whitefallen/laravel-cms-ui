@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Webhook</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <ul>
+      <li *ngFor="let webhook of webhooks">
+        <div class="component-page-content">
+          <div class="left-item">
+            <a [routerLink]="['/dashboard/webhook', this.webhook.id, 'detail']">{{webhook.url}}</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button [routerLink]="['/dashboard/webhook/add']">Add</button>
+  </mat-card-actions>
+</mat-card>
